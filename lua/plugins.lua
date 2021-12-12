@@ -21,6 +21,10 @@ return require('packer').startup(function(use)
   -- testing
   use { 'vim-test/vim-test'}
 
+  -- go
+  use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
+  use { 'sebdah/vim-delve' }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
