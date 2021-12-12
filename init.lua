@@ -4,3 +4,4 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 
 require('plugins')
+require('plugins.treesitter')
