@@ -5,3 +5,4 @@ vim.o.expandtab = true
 
 require('plugins')
 require('plugins.treesitter')
+require('plugins.lsp')
