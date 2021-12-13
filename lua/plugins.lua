@@ -25,6 +25,13 @@ return require('packer').startup(function(use)
   use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
   use { 'sebdah/vim-delve' }
 
+
+  -- Color scheme
+  use {
+    'dracula/vim',
+    as = 'dracula'
+  }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

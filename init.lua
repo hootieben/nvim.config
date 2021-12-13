@@ -7,3 +7,8 @@ require('plugins')
 require('plugins.treesitter')
 require('plugins.lsp')
 require('plugins.test')
+
+-- Colorscheme
+opt('termguicolors', true)
+opt('background', 'dark')
+cmd [[colorscheme dracula]]
