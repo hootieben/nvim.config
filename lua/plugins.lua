@@ -13,6 +13,7 @@ return require('packer').startup(function(use)
     run = ':TSUpdate'
   }
 
+  -- LSP
   use {
     'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer'
