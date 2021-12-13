@@ -41,6 +41,24 @@ return require('packer').startup(function(use)
   -- testing
   use { 'vim-test/vim-test'}
 
+  -- Git
+  use { 'tpope/vim-fugitive' }
+
+  use {
+    'tpope/vim-rhubarb',
+    requires = 'tpope/vim-fugitive',
+  }
+
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
+    },
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
+
   -- go
   use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
   use { 'sebdah/vim-delve' }
