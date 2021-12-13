@@ -18,6 +18,9 @@ return require('packer').startup(function(use)
     'williamboman/nvim-lsp-installer'
   }
 
+  -- Pretty symbols
+  use 'kyazdani42/nvim-web-devicons'
+
   -- testing
   use { 'vim-test/vim-test'}
 
