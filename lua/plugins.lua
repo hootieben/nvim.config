@@ -35,6 +35,9 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- Indentation
+  use 'lukas-reineke/indent-blankline.nvim'
+
   -- testing
   use { 'vim-test/vim-test'}
 
