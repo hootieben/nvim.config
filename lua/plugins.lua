@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
 
   -- LSP
   use {
+    'onsails/lspkind-nvim',
     'neovim/nvim-lspconfig',
     'williamboman/nvim-lsp-installer'
   }
