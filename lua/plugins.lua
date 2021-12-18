@@ -5,9 +5,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function(use)
-  -- My plugins here
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
@@ -62,7 +59,6 @@ return require('packer').startup(function(use)
   -- go
   use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
   use { 'sebdah/vim-delve' }
-
 
   -- Color scheme
   use {
