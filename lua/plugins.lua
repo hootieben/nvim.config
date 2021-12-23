@@ -9,7 +9,16 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+    run = ':TSUpdate',
+    requires = {
+      {
+        "windwp/nvim-autopairs",
+        run = "make",
+        config = function()
+          require("nvim-autopairs").setup {}
+        end,
+      },
+    },
   }
 
   -- LSP
