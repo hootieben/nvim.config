@@ -121,17 +121,36 @@ return require('packer').startup(function(use)
 
   -- Completion
   use {
-    'hrsh7th/nvim-cmp',
+    "hrsh7th/nvim-cmp",
     requires = {
-      'L3MON4D3/LuaSnip',
-      { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
-      'hrsh7th/cmp-nvim-lsp',
-      { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' },
-      { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-nvim-lsp",
+      "quangnguyen30192/cmp-nvim-ultisnips",
+      "hrsh7th/cmp-nvim-lua",
+      "octaltree/cmp-look",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-calc",
+      "f3fora/cmp-spell",
+      "hrsh7th/cmp-emoji",
+      "ray-x/cmp-treesitter",
+      "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-nvim-lsp-document-symbol",
     },
-    config = [[require('config.cmp')]],
-    event = 'InsertEnter *',
+    config = function()
+      require("config.cmp").setup()
+    end,
+  }
+
+  use {
+    "SirVer/ultisnips",
+    requires = { { "honza/vim-snippets", rtp = "." }, "mlaursen/vim-react-snippets" },
+    config = function()
+      vim.g.UltiSnipsExpandTrigger = "<Plug>(ultisnips_expand)"
+      vim.g.UltiSnipsJumpForwardTrigger = "<Plug>(ultisnips_jump_forward)"
+      vim.g.UltiSnipsJumpBackwardTrigger = "<Plug>(ultisnips_jump_backward)"
+      vim.g.UltiSnipsListSnippets = "<c-x><c-s>"
+      vim.g.UltiSnipsRemoveSelectModeMappings = 0
+    end,
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
