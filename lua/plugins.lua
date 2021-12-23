@@ -153,6 +153,9 @@ return require('packer').startup(function(use)
     end,
   }
 
+  -- Kitty Integration
+  use { 'knubie/vim-kitty-navigator' }
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
