@@ -6,10 +6,11 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 
 require('plugins')
-require('plugins.lualine')
-require('plugins.treesitter')
-require('plugins.lsp')
-require('plugins.test')
+require('config.lualine')
+require('config.treesitter')
+require('config.lsp')
+require('config.test')
+-- require('plugins.cmp')
 
 -- Colorscheme
 opt('termguicolors', true)
