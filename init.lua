@@ -12,7 +12,6 @@ require('config.lualine')
 require('config.treesitter')
 require('config.lsp')
 require('config.test')
--- require('plugins.cmp')
 
 -- Colorscheme
 opt('termguicolors', true)
