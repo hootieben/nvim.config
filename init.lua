@@ -5,6 +5,8 @@ vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 
+opt('signcolumn', 'yes:1', window)
+
 require('plugins')
 require('config.lualine')
 require('config.treesitter')
