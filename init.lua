@@ -15,13 +15,13 @@ local map = utils.map
 
 opt('signcolumn', 'yes:1', window)
 
-require('plugins')
+-- require('plugins')
 -- require('config.lualine')
 -- require('config.treesitter')
 -- require('config.lsp')
---require('config.test')
+-- require('config.test')
 
 -- Colorscheme
 opt('termguicolors', true)
 opt('background', 'dark')
-cmd [[colorscheme dracula]]
+-- cmd [[colorscheme dracula]]
