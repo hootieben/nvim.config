@@ -26,13 +26,15 @@ return require('packer').startup(function(use)
         end,
       },
     },
+    config = [[require('config.treesitter')]],
   }
 
   -- LSP
   use {
     'onsails/lspkind-nvim',
     'neovim/nvim-lspconfig',
-    'williamboman/nvim-lsp-installer'
+    'williamboman/nvim-lsp-installer',
+    setup = [[require('config.lsp')]],
   }
 
   -- Pretty symbols
@@ -55,7 +57,11 @@ return require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'
 
   -- testing
-  use { 'vim-test/vim-test'}
+  use { 
+    'vim-test/vim-test',
+    config = [[require('config.test')]],
+
+  }
 
   -- Search
   use {
@@ -123,7 +129,8 @@ return require('packer').startup(function(use)
   -- Lualine
   use {
     'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    config = [[require('config.lualine')]],
   }
 
   -- Completion
