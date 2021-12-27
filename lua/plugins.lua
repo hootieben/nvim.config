@@ -25,6 +25,45 @@ require("packer").startup({
     use {'lewis6991/impatient.nvim', config = [[require('impatient')]]}
 
     use({"wbthomason/packer.nvim", opt = true})
+
+    use {"onsails/lspkind-nvim", event = "BufEnter"}
+
+    use {"hrsh7th/nvim-cmp", after = "lspkind-nvim", config = [[require('config.nvim-cmp')]]}
+
+    -- nvim-cmp completion sources
+    use {"hrsh7th/cmp-nvim-lsp", after = "nvim-cmp"}
+    use {"hrsh7th/cmp-nvim-lua", after = "nvim-cmp"}
+    use {"hrsh7th/cmp-path", after = "nvim-cmp"}
+    use {"hrsh7th/cmp-buffer", after = "nvim-cmp"}
+    -- use {"hrsh7th/cmp-cmdline", after = "nvim-cmp"}
+    use {"quangnguyen30192/cmp-nvim-ultisnips", after = {'nvim-cmp', 'ultisnips'}}
+
+    -- Snippet engine and snippet template
+    use({"SirVer/ultisnips", event = 'InsertEnter'})
+    use({ "honza/vim-snippets", after = 'ultisnips'})
+
+    -- nvim-lsp configuration (it relies on cmp-nvim-lsp, so it should be loaded after cmp-nvim-lsp).
+    use({ "neovim/nvim-lspconfig", after = "cmp-nvim-lsp", config = [[require('config.lsp')]] })
+
+    use({ "nvim-treesitter/nvim-treesitter", event = 'BufEnter', run = ":TSUpdate", config = [[require('config.treesitter')]] })
+
+    use({"mhinz/vim-signify", event = 'BufEnter'})
+
+    use {'kyazdani42/nvim-web-devicons', event = 'VimEnter'}
+
+    use {
+      'nvim-lualine/lualine.nvim',
+      event = 'VimEnter',
+      config = [[require('config.lualine')]]
+    }
+
+    use({ "akinsho/bufferline.nvim", event = "VimEnter", config = [[require('config.bufferline')]] })
+
+    use({
+      "lukas-reineke/indent-blankline.nvim",
+      event = 'VimEnter',
+      config = [[require('config.indent-blankline')]]
+    })
   end,
   config = {
     max_jobs = 16,
