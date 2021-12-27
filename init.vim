@@ -31,4 +31,37 @@ else
   echoerr 'Python 3 executable not found! You must install Python 3 and set its PATH correctly!'
 endif
 
+" Use English as main language
+language en_US.utf-8
+"}}
+
+"{{ Disable loading certain plugins
+" Whether to load netrw by default, see
+" https://github.com/bling/dotvim/issues/4
+" let g:loaded_netrw       = 0
+" let g:loaded_netrwPlugin = 0
+let g:netrw_liststyle = 3
+if g:is_win
+  let g:netrw_http_cmd = 'curl --ssl-no-revoke -Lo'
+endif
+
+" Do not load tohtml.vim
+let g:loaded_2html_plugin = 1
+
+" Do not load zipPlugin.vim, gzip.vim and tarPlugin.vim (all these plugins are
+" related to checking files inside compressed files)
+let g:loaded_zipPlugin = 1
+let loaded_gzip = 1
+let g:loaded_tarPlugin = 1
+
+let g:loaded_tutor_mode_plugin = 1  " do not load the tutor plugin
+"}}
+"}
+
+" Auto-generate packer_compiled.lua file
+augroup packer_auto_compile
+  autocmd!
+  autocmd BufWritePost */nvim/lua/plugins.lua source <afile> | PackerCompile
+augroup END
+
 lua require('plugins')
