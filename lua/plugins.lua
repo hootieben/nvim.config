@@ -62,6 +62,10 @@ require("packer").startup({
         require('gitsigns').setup()
       end
     }
+    use({ "rbong/vim-flog", requires = "tpope/vim-fugitive", cmd = { "Flog" } })
+    use({"rhysd/committia.vim", opt = true, setup = [[vim.cmd('packadd committia.vim')]]})
+
+
 
     -- Color scheme
     use {
