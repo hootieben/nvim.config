@@ -47,7 +47,15 @@ require("packer").startup({
 
     use({ "nvim-treesitter/nvim-treesitter", event = 'BufEnter', run = ":TSUpdate", config = [[require('config.treesitter')]] })
 
-    use({"mhinz/vim-signify", event = 'BufEnter'})
+    use {
+      'lewis6991/gitsigns.nvim',
+      requires = {
+        'nvim-lua/plenary.nvim'
+      },
+      config = function()
+        require('gitsigns').setup()
+      end
+    }
 
     use {'kyazdani42/nvim-web-devicons', event = 'VimEnter'}
 
