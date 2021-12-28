@@ -42,6 +42,9 @@ require("packer").startup({
     use({"SirVer/ultisnips", event = 'InsertEnter'})
     use({ "honza/vim-snippets", after = 'ultisnips'})
 
+    -- Automatic insertion and deletion of a pair of characters
+    use({"Raimondi/delimitMate", event = "InsertEnter"})
+
     -- nvim-lsp configuration (it relies on cmp-nvim-lsp, so it should be loaded after cmp-nvim-lsp).
     use({ "neovim/nvim-lspconfig", after = "cmp-nvim-lsp", config = [[require('config.lsp')]] })
 
