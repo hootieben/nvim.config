@@ -75,8 +75,6 @@ require("packer").startup({
 
     use({
       "lukas-reineke/indent-blankline.nvim",
-      event = 'VimEnter',
-      config = [[require('config.indent-blankline')]]
     })
 
     -- Go
