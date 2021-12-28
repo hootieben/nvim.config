@@ -115,6 +115,11 @@ lspconfig.vimls.setup({
   capabilities = capabilities,
 })
 
+lspconfig.gopls.setup({
+  on_attach = custom_attach,
+  capabilities = capabilities,
+})
+
 local sumneko_binary_path = vim.fn.exepath("lua-language-server")
 if vim.g.is_mac or vim.g.is_linux and sumneko_binary_path ~= "" then
   local sumneko_root_path = vim.fn.fnamemodify(sumneko_binary_path, ":h:h:h")
