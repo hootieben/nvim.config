@@ -64,6 +64,11 @@ require("packer").startup({
       event = 'VimEnter',
       config = [[require('config.indent-blankline')]]
     })
+
+    -- Go
+    use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
+    use { 'sebdah/vim-delve', after = 'vim-go' }
+
   end,
   config = {
     max_jobs = 16,
