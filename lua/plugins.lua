@@ -68,7 +68,7 @@ require("packer").startup({
     use({ "rbong/vim-flog", requires = "tpope/vim-fugitive", cmd = { "Flog" } })
     use({"rhysd/committia.vim", opt = true, setup = [[vim.cmd('packadd committia.vim')]]})
 
-
+    use({ "kevinhwang91/nvim-bqf", event = "FileType qf", config = [[require('config.bqf')]] })
 
     -- Color scheme
     use {
