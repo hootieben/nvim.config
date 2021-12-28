@@ -58,6 +58,18 @@ let g:loaded_tutor_mode_plugin = 1  " do not load the tutor plugin
 "}}
 "}
 
+" General tab settings
+set tabstop=2      " number of visual spaces per TAB
+set softtabstop=2  " number of spaces in tab when editing
+set shiftwidth=2    " number of spaces to use for autoindent
+set expandtab       " expand tab to spaces so that tabs are spaces
+
+set number
+set signcolumn=yes:1
+
+set termguicolors
+set background=dark
+
 " Auto-generate packer_compiled.lua file
 augroup packer_auto_compile
   autocmd!
