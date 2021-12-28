@@ -47,6 +47,12 @@ require("packer").startup({
 
     use({ "nvim-treesitter/nvim-treesitter", event = 'BufEnter', run = ":TSUpdate", config = [[require('config.treesitter')]] })
 
+    -- Git
+    use { 'tpope/vim-fugitive' }
+    use {
+      'tpope/vim-rhubarb',
+      requires = 'tpope/vim-fugitive',
+    }
     use {
       'lewis6991/gitsigns.nvim',
       requires = {
