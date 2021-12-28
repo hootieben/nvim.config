@@ -98,7 +98,9 @@ require("packer").startup({
     use { 'knubie/vim-kitty-navigator' }
 
     -- Direnv
-    use { 'direnv/direnv.vim'}
+    if utils.executable("direnv") then
+      use { 'direnv/direnv.vim'}
+    end
 
     -- Kommentary
     use { 'b3nj5m1n/kommentary'}
