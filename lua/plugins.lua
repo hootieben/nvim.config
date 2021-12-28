@@ -57,6 +57,12 @@ require("packer").startup({
       end
     }
 
+    -- Color scheme
+    use {
+      'dracula/vim',
+      as = 'dracula'
+    }
+
     use {'kyazdani42/nvim-web-devicons', event = 'VimEnter'}
 
     use {
