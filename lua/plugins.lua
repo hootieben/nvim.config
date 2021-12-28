@@ -96,6 +96,9 @@ require("packer").startup({
     -- Kommentary
     use { 'b3nj5m1n/kommentary'}
 
+    -- Modern matchit implementation
+    use({"andymass/vim-matchup", event = "VimEnter"})
+
   end,
   config = {
     max_jobs = 16,
