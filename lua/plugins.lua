@@ -87,6 +87,15 @@ require("packer").startup({
     use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
     use { 'sebdah/vim-delve', after = 'vim-go' }
 
+    -- Kitty Integration
+    use { 'knubie/vim-kitty-navigator' }
+
+    -- Direnv
+    use { 'direnv/direnv.vim'}
+
+    -- Kommentary
+    use { 'b3nj5m1n/kommentary'}
+
   end,
   config = {
     max_jobs = 16,
