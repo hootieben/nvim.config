@@ -42,6 +42,17 @@ require("packer").startup({
     use({"SirVer/ultisnips", event = 'InsertEnter'})
     use({ "honza/vim-snippets", after = 'ultisnips'})
 
+    -- Show match number and index for searching
+    use {
+      'kevinhwang91/nvim-hlslens',
+      branch = 'main',
+      keys = {{'n', '*'}, {'n', '#'}, {'n', 'n'}, {'n', 'N'}},
+      config = [[require('config.hlslens')]]
+    }
+
+    -- Stay after pressing * and search selected text
+    use({"haya14busa/vim-asterisk", event = 'VimEnter'})
+
     -- Automatic insertion and deletion of a pair of characters
     use({"Raimondi/delimitMate", event = "InsertEnter"})
 
