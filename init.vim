@@ -57,6 +57,16 @@ let g:loaded_tarPlugin = 1
 let g:loaded_tutor_mode_plugin = 1  " do not load the tutor plugin
 "}}
 "}
+"
+" Split window below/right when creating horizontal/vertical windows
+set splitbelow splitright
+
+" Time in milliseconds to wait for a mapped sequence to complete,
+" see https://unix.stackexchange.com/q/36882/221410 for more info
+set timeoutlen=500
+
+set updatetime=500  " For CursorHold events
+
 
 " General tab settings
 set tabstop=2      " number of visual spaces per TAB
