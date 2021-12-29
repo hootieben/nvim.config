@@ -122,6 +122,9 @@ endif
 " Toggle cursor column
 nnoremap <silent> <leader>cl :<C-U>call utils#ToggleCursorCol()<CR>
 
+nnoremap <silent> gb :<C-U>call buf_utils#GoToBuffer(v:count, 'forward')<CR>
+nnoremap <silent> gB :<C-U>call buf_utils#GoToBuffer(v:count, 'backward')<CR>
+
 " Auto-generate packer_compiled.lua file
 augroup packer_auto_compile
   autocmd!
