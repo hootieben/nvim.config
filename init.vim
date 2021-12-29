@@ -131,8 +131,14 @@ augroup packer_auto_compile
   autocmd BufWritePost */nvim/lua/plugins.lua source <afile> | PackerCompile
 augroup END
 
-source core/autocommands.vim
-source core/mappings.vim
-source core/plugins.vim
-" lua require('plugins')
+let g:config_files = [
+      \ 'autocommands.vim',
+      \ 'mappings.vim',
+      \ 'plugins.vim',
+      \ ]
+
+for s:fname in g:config_files
+  execute printf('source %s/core/%s', stdpath('config'), s:fname)
+endfor
+
 colorscheme dracula
