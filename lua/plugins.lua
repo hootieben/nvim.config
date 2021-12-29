@@ -101,6 +101,15 @@ require("packer").startup({
       "lukas-reineke/indent-blankline.nvim",
     })
 
+    -- notification plugin
+    use({
+      "rcarriga/nvim-notify",
+      event = "BufEnter",
+      config = function()
+        vim.defer_fn(function() require('config.nvim-notify') end, 2000)
+      end
+    })
+
     -- Go
     use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
     use { 'sebdah/vim-delve', after = 'vim-go' }
