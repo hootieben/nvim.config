@@ -115,3 +115,4 @@ augroup packer_auto_compile
 augroup END
 
 lua require('plugins')
+colorscheme dracula
