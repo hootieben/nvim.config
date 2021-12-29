@@ -70,6 +70,14 @@ set signcolumn=yes:1
 set termguicolors
 set background=dark
 
+set completeopt+=menuone  " Show menu even if there is only one item
+set completeopt-=preview  " Disable the preview window
+
+set pumheight=10  " Maximum number of items to show in popup menu
+set pumblend=10  " pseudo transparency for completion menu
+
+set winblend=5  " pseudo transparency for floating window
+
 " Ignore certain files and folders when globing
 set wildignore+=*.o,*.obj,*.dylib,*.bin,*.dll,*.exe
 set wildignore+=*/.git/*,*/.svn/*,*/__pycache__/*,*/build/**
@@ -78,6 +86,10 @@ set wildignore+=*.pyc,*.pkl
 set wildignore+=*.DS_Store
 set wildignore+=*.aux,*.bbl,*.blg,*.brf,*.fls,*.fdb_latexmk,*.synctex.gz,*.xdv
 set wildignorecase  " ignore file and dir name cases in cmd-completion
+
+" Tab-complete, see https://vi.stackexchange.com/q/19675/15292.
+inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " Auto-generate packer_compiled.lua file
 augroup packer_auto_compile
