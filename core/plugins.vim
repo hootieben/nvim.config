@@ -97,7 +97,7 @@ nnoremap <silent> <leader>fb :<C-U>Leaderf buffer --popup<CR>
 " Search recent files
 nnoremap <silent> <leader>fr :<C-U>Leaderf mru --popup<CR>
 
-let g:Lf_PopupColorscheme = 'gruvbox_material'
+let g:Lf_PopupColorscheme = 'dracula'
 
 " Change keybinding in LeaderF prompt mode, use ctrl-n and ctrl-p to navigate
 " items.
