@@ -50,8 +50,16 @@ require("packer").startup({
       config = [[require('config.hlslens')]]
     }
 
+    use {
+      'nvim-telescope/telescope.nvim', cmd = 'Telescope',
+      requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
     -- Stay after pressing * and search selected text
     use({"haya14busa/vim-asterisk", event = 'VimEnter'})
+
+    -- File search, tag search and more
+    use({ "Yggdroot/LeaderF", cmd = "Leaderf", run = ":LeaderfInstallCExtension" })
 
     -- Automatic insertion and deletion of a pair of characters
     use({"Raimondi/delimitMate", event = "InsertEnter"})
@@ -96,6 +104,9 @@ require("packer").startup({
     }
 
     use({ "akinsho/bufferline.nvim", event = "VimEnter", config = [[require('config.bufferline')]] })
+
+    -- fancy start screen
+    use { 'goolord/alpha-nvim', event = 'VimEnter', config = [[require('config.alpha-nvim')]] }
 
     use({
       "lukas-reineke/indent-blankline.nvim",
