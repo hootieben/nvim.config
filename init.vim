@@ -94,6 +94,7 @@ set pumblend=10  " pseudo transparency for completion menu
 
 set winblend=5  " pseudo transparency for floating window
 
+set wildmode=longest:full,full
 " Ignore certain files and folders when globing
 set wildignore+=*.o,*.obj,*.dylib,*.bin,*.dll,*.exe
 set wildignore+=*/.git/*,*/.svn/*,*/__pycache__/*,*/build/**
