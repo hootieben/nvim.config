@@ -128,5 +128,6 @@ augroup packer_auto_compile
   autocmd BufWritePost */nvim/lua/plugins.lua source <afile> | PackerCompile
 augroup END
 
-lua require('plugins')
+source core/plugins.vim
+" lua require('plugins')
 colorscheme dracula
