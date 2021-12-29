@@ -108,6 +108,20 @@ set wildignorecase  " ignore file and dir name cases in cmd-completion
 inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
+" Jump to matching pairs easily in normal mode
+nnoremap <Tab> %
+
+" Use Esc to quit builtin terminal
+tnoremap <ESC>   <C-\><C-n>
+
+" Clear highlighting
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :<C-U>nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+endif
+
+" Toggle cursor column
+nnoremap <silent> <leader>cl :<C-U>call utils#ToggleCursorCol()<CR>
+
 " Auto-generate packer_compiled.lua file
 augroup packer_auto_compile
   autocmd!
