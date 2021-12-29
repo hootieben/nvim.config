@@ -89,6 +89,10 @@ require("packer").startup({
 
     use({ "kevinhwang91/nvim-bqf", event = "FileType qf", config = [[require('config.bqf')]] })
 
+    if utils.executable("fzf") then
+      use { 'junegunn/fzf'}
+    end
+
     -- Color scheme
     use ({"dracula/vim", as = "dracula", opt=true})
 
