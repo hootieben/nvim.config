@@ -90,10 +90,7 @@ require("packer").startup({
     use({ "kevinhwang91/nvim-bqf", event = "FileType qf", config = [[require('config.bqf')]] })
 
     -- Color scheme
-    use {
-      'dracula/vim',
-      as = 'dracula'
-    }
+    use ({"dracula/vim", as = "dracula", opt=true})
 
     use {'kyazdani42/nvim-web-devicons', event = 'VimEnter'}
 
