@@ -128,6 +128,9 @@ require("packer").startup({
     -- Modern matchit implementation
     use({"andymass/vim-matchup", event = "VimEnter"})
 
+    -- The missing auto-completion for cmdline!
+    use({"gelguy/wilder.nvim", opt = true, setup = [[vim.cmd('packadd wilder.nvim')]]})
+
   end,
   config = {
     max_jobs = 16,
