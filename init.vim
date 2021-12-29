@@ -70,6 +70,12 @@ set signcolumn=yes:1
 set termguicolors
 set background=dark
 
+set scrolloff=3
+
+set noshowmode
+set shortmess+=c
+set shortmess+=S
+
 set completeopt+=menuone  " Show menu even if there is only one item
 set completeopt-=preview  " Disable the preview window
 
