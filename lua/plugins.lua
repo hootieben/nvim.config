@@ -42,6 +42,8 @@ require("packer").startup({
     use({"SirVer/ultisnips", event = 'InsertEnter'})
     use({ "honza/vim-snippets", after = 'ultisnips'})
 
+    use({ "jdhao/better-escape.vim", event = { "InsertEnter" } })
+
     -- Show match number and index for searching
     use {
       'kevinhwang91/nvim-hlslens',
