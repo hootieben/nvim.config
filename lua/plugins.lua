@@ -71,6 +71,15 @@ require("packer").startup({
 
     use({ "nvim-treesitter/nvim-treesitter", event = 'BufEnter', run = ":TSUpdate", config = [[require('config.treesitter')]] })
 
+    -- Super fast buffer jump
+    use {
+      'phaazon/hop.nvim',
+      event = "VimEnter",
+      config = function()
+        vim.defer_fn(function() require('config.nvim_hop') end, 2000)
+      end
+    }
+
     -- Git
     use { 'tpope/vim-fugitive' }
     use {
