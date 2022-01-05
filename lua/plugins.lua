@@ -166,6 +166,9 @@ require("packer").startup({
     -- Modern matchit implementation
     use({"andymass/vim-matchup", event = "VimEnter"})
 
+    -- Session management plugin
+    use({"tpope/vim-obsession", cmd = 'Obsession'})
+
     -- The missing auto-completion for cmdline!
     use({"gelguy/wilder.nvim", opt = true, setup = [[vim.cmd('packadd wilder.nvim')]]})
 
