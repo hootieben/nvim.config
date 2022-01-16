@@ -23,13 +23,14 @@ let g:did_install_default_menus = 1  " do not load menu
 
 " Path to Python 3 interpreter (must be an absolute path), make startup
 " faster. See https://neovim.io/doc/user/provider.html.
-if executable('python')
-  if g:is_linux || g:is_mac
-    let g:python3_host_prog=exepath('python')
-  endif
-else
-  echoerr 'Python 3 executable not found! You must install Python 3 and set its PATH correctly!'
-endif
+" if executable('python')
+"   if g:is_linux || g:is_mac
+"     let g:python3_host_prog=exepath('python')
+"   endif
+" else
+"   echoerr 'Python 3 executable not found! You must install Python 3 and set its PATH correctly!'
+" endif
+let g:python3_host_prog=expand("$HOME/.venv/nvim/bin/python3")
 
 " Use English as main language
 language en_US.utf-8
