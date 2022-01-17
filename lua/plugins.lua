@@ -180,6 +180,9 @@ require("packer").startup({
     end
     }
 
+    -- Ansible
+    use { 'pearofducks/ansible-vim' }
+
   end,
   config = {
     max_jobs = 16,
