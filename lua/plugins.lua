@@ -116,7 +116,7 @@ require("packer").startup({
     if utils.executable("fzf") then
       use { 'junegunn/fzf',}
     else
-      use ({ 'junegunn/fzf', run = "fzf#install()"})
+      use ({ 'junegunn/fzf', run = "./install --bin"})
     end
 
     -- Color scheme
