@@ -84,8 +84,8 @@ set background=dark
 set scrolloff=3
 
 set noshowmode
-set shortmess+=c
-set shortmess+=S
+set shortmess=
+set cmdheight=2
 
 set completeopt+=menuone  " Show menu even if there is only one item
 set completeopt-=preview  " Disable the preview window
