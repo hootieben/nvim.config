@@ -95,6 +95,9 @@ nnoremap <silent> <leader>fb :<C-U>Leaderf buffer --popup<CR>
 nnoremap <silent> <leader>fr :<C-U>Leaderf mru --popup<CR>
 
 let g:Lf_PopupColorscheme = 'dracula'
+let g:Lf_PreviewInPopup = 1
+let g:Lf_WindowPosition = 'popup'
+
 
 " Change keybinding in LeaderF prompt mode, use ctrl-n and ctrl-p to navigate
 " items.
