@@ -68,6 +68,7 @@ require("packer").startup({
         'nvim-lua/plenary.nvim',
         'telescope-frecency.nvim',
         'telescope-fzf-native.nvim',
+        'telescope-github.nvim',
       },
       setup = [[require('config.telescope_setup')]],
       config = [[require('config.telescope')]],
@@ -81,6 +82,13 @@ require("packer").startup({
         require"telescope".load_extension("frecency")
       end,
       requires = {"tami5/sqlite.lua"}
+    }
+
+    use { 
+      'nvim-telescope/telescope-github.nvim',
+      config = function()
+        require"telescope".load_extension("gh")
+      end
     }
 
     -- Stay after pressing * and search selected text
