@@ -42,10 +42,7 @@ let g:Lf_WildIgnore = {
   \ '*.mp3', '*.aac']
   \}
 
-" Do not show fancy icons for Linux server.
-if g:is_linux
-  let g:Lf_ShowDevIcons = 0
-endif
+let g:Lf_ShowDevIcons = 1 
 
 " Only fuzzy-search files names
 let g:Lf_DefaultMode = 'NameOnly'
