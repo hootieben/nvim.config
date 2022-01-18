@@ -133,6 +133,7 @@ augroup packer_auto_compile
 augroup END
 
 let g:config_files = [
+      \ 'globals.vim',
       \ 'options.vim',
       \ 'autocommands.vim',
       \ 'mappings.vim',
