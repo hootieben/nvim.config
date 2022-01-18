@@ -1,7 +1,7 @@
 local map = vim.api.nvim_set_keymap
 local options = { noremap = true, silent = false }
 
-map('n', '<leader>t', '<cmd>lua require("telescope.builtin").find_files()<CR>', options)
+map('n', '<leader>tf', '<cmd>lua require("telescope.builtin").find_files()<CR>', options)
 map('n', '<leader>tg', '<cmd>lua require("telescope.builtin").live_grep()<CR>', options)
 map('n', '<leader>tb', '<cmd>lua require("telescope.builtin").buffers()<CR>', options)
 map('n', '<leader>th', '<cmd>lua require("telescope.builtin").help_tags()<CR>', options)
