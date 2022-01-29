@@ -84,7 +84,7 @@ require("packer").startup({
       requires = {"tami5/sqlite.lua"}
     }
 
-    use { 
+    use {
       'nvim-telescope/telescope-github.nvim',
       config = function()
         require"telescope".load_extension("gh")

@@ -42,7 +42,7 @@ let g:UltiSnipsSnippetDirectories=['UltiSnips', 'my_snippets']
 "   \ '*.mp3', '*.aac']
 "   \}
 
-" let g:Lf_ShowDevIcons = 1 
+" let g:Lf_ShowDevIcons = 1
 
 " " Only fuzzy-search files names
 " let g:Lf_DefaultMode = 'NameOnly'
@@ -257,4 +257,3 @@ endfunction
 """"""""""""""""""""""""""""""vim-terraform settings""""""""""""""""""""""""""""""
 let g:terraform_align = 1
 let g:terraform_fmt_on_save = 1
-

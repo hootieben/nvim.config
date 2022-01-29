@@ -1,4 +1,4 @@
-vim.api.nvim_set_var('lightline', { 
+vim.api.nvim_set_var('lightline', {
   colorscheme = 'one',
   component_expand = {
     lsp_warnings = 'lightline#lsp#warnings',
