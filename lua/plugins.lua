@@ -228,6 +228,25 @@ require("packer").startup({
     -- Ansible
     use { 'pearofducks/ansible-vim' }
 
+    -- Terraform
+    use { 'hashivim/vim-terraform'}
+
+    use { 'kassio/neoterm' }
+    -- ToggleTerm
+    use ({ 'akinsho/toggleterm.nvim',
+      config = function()
+        require("toggleterm").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+          open_mapping = [[<c-\>]],
+        }
+      end
+    })
+
+    use { 'github/copilot.vim' }
+
+
   end,
   config = {
     max_jobs = 16,

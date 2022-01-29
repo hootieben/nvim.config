@@ -252,3 +252,9 @@ function! s:wilder_init() abort
     echohl Error |echomsg "Wilder.nvim missing: run :PackerSync to fix."|echohl None
   endtry
 endfunction
+
+
+""""""""""""""""""""""""""""""vim-terraform settings""""""""""""""""""""""""""""""
+let g:terraform_align = 1
+let g:terraform_fmt_on_save = 1
+
