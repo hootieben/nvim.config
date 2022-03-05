@@ -251,7 +251,7 @@ require("packer").startup({
       end
     })
 
-    use { 'github/copilot.vim' }
+
 
 
   end,
