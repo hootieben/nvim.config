@@ -199,6 +199,13 @@ require("packer").startup({
 
     -- Kitty Integration
     use { 'knubie/vim-kitty-navigator' }
+    use {
+      'hootieben/kitty-runner.nvim',
+      config = function()
+        require('kitty-runner').setup()
+      end
+    }
+    use { 'fladson/vim-kitty' }
 
     -- Direnv
     if utils.executable("direnv") then
