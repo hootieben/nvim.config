@@ -5,3 +5,5 @@ if executable('rg')
 endif
 
 set fileencoding=utf-8
+
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
