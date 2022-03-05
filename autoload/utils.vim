@@ -162,7 +162,7 @@ function! utils#Inside_git_repo() abort
   endif
 endfunction
 
-function! utils#GetGitBranch()
+function! utils#GetGitBranch() abort
   let l:res = systemlist('git rev-parse --abbrev-ref HEAD')[0]
   if match(l:res, 'fatal') != -1
     return ''
@@ -177,7 +177,7 @@ function! utils#CaptureCommandOutput(command) abort
   redir @m
   execute a:command
   redir END
-  call v:lua.vim.notify("command output captured to register m", "info", {'title': 'nvim-config'})
+  call v:lua.vim.notify('command output captured to register m', 'info', {'title': 'nvim-config'})
   "create a scratch buffer for dumping the text, ref: https://vi.stackexchange.com/a/11311/15292.
   tabnew | setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile
   call nvim_buf_set_lines(0, 0, 0, 0, [@m])
