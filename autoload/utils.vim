@@ -120,7 +120,7 @@ function! utils#MoveSelection(direction) abort
       normal! gv
       return
     endif
-    silent execute printf('%s,%smove+%s', l:start_line, l:end_line, l:num_lne)
+    silent execute printf('%s,%smove+%s', l:start_line, l:end_line, l:num_line)
     normal! gv
   endif
 endfunction
