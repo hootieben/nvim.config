@@ -1,5 +1,5 @@
 require("which-key").setup({
-  plugins = {
+  --[[ plugins = {
     marks = true, -- shows a list of your marks on ' and `
     registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
     spelling = {
@@ -56,14 +56,14 @@ require("which-key").setup({
     -- this is mostly relevant for key maps that start with a native binding
     -- most people should not need to change this
     n = { "o", "O" },
-  },
+  }, ]]
 })
 
 local wk = require("which-key")
 wk.register({
   ["<leader>"] = {
     f = {
-      name = "+file",
+      name = "file",
       f = { "<cmd>Telescope find_files<cr>", "Find File" },
 			g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
 			b = { "<cmd>Telescope buffers<cr>", "Buffers" },
@@ -74,11 +74,14 @@ wk.register({
     },
     x = {
         name = "+trouble",
-        d = { "<cmd>TroubleToggle lsp_document_diagnostics<cr>", "Document Diagnostics" },
+        d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document Diagnostics" },
     },
 		t = {
 			name = "+nvimtree",
 			t = { ":NvimTreeToggle<cr>", "Tree Toggle" },
 		},
+    p = {
+      name = "Paste above"
+    }
   },
 })

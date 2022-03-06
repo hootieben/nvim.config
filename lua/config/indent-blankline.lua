@@ -1,22 +1,16 @@
-require("indent_blankline").setup({
-  -- U+2502 may also be a good choice, it will be on the middle of cursor.
-  -- U+250A is also a good choice
-  char = "▏",
-  show_end_of_line = false,
-  disable_with_nolist = true,
-  buftype_exclude = { "terminal" },
-  filetype_exclude = { "help", "git", "markdown", "snippets", "text", "gitconfig", "alpha" },
-})
+vim.opt.termguicolors = true
+vim.cmd [[highlight IndentBlanklineIndent1 guibg=#1f1f1f gui=nocombine]]
+vim.cmd [[highlight IndentBlanklineIndent2 guibg=#1a1a1a gui=nocombine]]
 
-vim.cmd([[
-function! Should_activate_indentblankline() abort
-  if index(g:indent_blankline_filetype_exclude, &filetype) == -1
-    IndentBlanklineEnable
-  endif
-endfunction
-augroup indent_blankline
-  autocmd!
-  autocmd InsertEnter * IndentBlanklineDisable
-  autocmd InsertLeave * call Should_activate_indentblankline()
-augroup END
-]])
+require("indent_blankline").setup {
+    char = "",
+    char_highlight_list = {
+        "IndentBlanklineIndent1",
+        "IndentBlanklineIndent2",
+    },
+    space_char_highlight_list = {
+        "IndentBlanklineIndent1",
+        "IndentBlanklineIndent2",
+    },
+    show_trailing_blankline_indent = false,
+}
