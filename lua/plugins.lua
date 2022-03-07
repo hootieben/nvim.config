@@ -15,29 +15,6 @@ if fn.glob(packer_install_dir) == "" then
   vim.cmd(install_cmd)
 end
 
-vim.opt.list = true
-vim.opt.listchars = {
-    space = "⋅",
-    eol = "↴",
-    tab = "__",
-    trail = "•",
-    extends = "❯",
-    precedes = "❮",
-    nbsp = "_",
-}
-vim.opt.fillchars = {
-    fold = " ",
-    diff = "╱",
-}
-
-vim.opt.termguicolors = true
-vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent3 guifg=#98C379 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent4 guifg=#56B6C2 gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
-vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
-
 -- Load packer.nvim
 vim.cmd("packadd packer.nvim")
 local util = require('packer.util')
@@ -204,6 +181,12 @@ require("packer").startup({
     use { 'goolord/alpha-nvim', event = 'VimEnter', config = [[require('config.alpha-nvim')]] }
 
     use {
+      'lukas-reineke/indent-blankline.nvim',
+      config = function()
+        require("indent_blankline").setup()
+      end
+    }
+    --[[ use {
       "lukas-reineke/indent-blankline.nvim",
       config = function()
         require("indent_blankline").setup {
@@ -255,7 +238,7 @@ require("packer").startup({
             },
         }
     end,
-    }
+    } ]]
 
     -- notification plugin
     use({
