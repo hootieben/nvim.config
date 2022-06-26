@@ -175,7 +175,7 @@ require("packer").startup({
       config = [[require('config.lualine')]]
     }
 
-    use({ "akinsho/bufferline.nvim", event = "VimEnter", config = [[require('config.bufferline')]] })
+    use({ "akinsho/bufferline.nvim", tag = "v2.*", event = "VimEnter", config = [[require('config.bufferline')]] })
 
     -- fancy start screen
     use { 'goolord/alpha-nvim', event = 'VimEnter', config = [[require('config.alpha-nvim')]] }
@@ -296,7 +296,9 @@ require("packer").startup({
 
     use { 'kassio/neoterm' }
     -- ToggleTerm
+    --
     use ({ 'akinsho/toggleterm.nvim',
+      tag = "v2.*",
       config = function()
         require("toggleterm").setup {
           -- your configuration comes here
