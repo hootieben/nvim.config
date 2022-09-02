@@ -26,6 +26,18 @@ require("packer").startup({
 
     use({"wbthomason/packer.nvim", opt = true})
 
+    use {'kyazdani42/nvim-web-devicons', event = 'VimEnter'}
+
+    -- NvimTree
+    use {
+      'kyazdani42/nvim-tree.lua',
+      requires = {
+        'kyazdani42/nvim-web-devicons', -- optional, for file icon
+      },
+      -- config = function() require'nvim-tree'.setup {} end
+      config = [[require('config.nvimtree')]]
+    }
+
     use {"onsails/lspkind-nvim", event = "BufEnter"}
 
     use {"hrsh7th/nvim-cmp", after = "lspkind-nvim", config = [[require('config.nvim-cmp')]]}
@@ -116,15 +128,6 @@ require("packer").startup({
       end
     }
 
-    -- NvimTree
-    use {
-      'kyazdani42/nvim-tree.lua',
-      requires = {
-        'kyazdani42/nvim-web-devicons', -- optional, for file icon
-      },
-      -- config = function() require'nvim-tree'.setup {} end
-      config = [[require('config.nvimtree')]]
-    }
 
 
     use({ "nvim-treesitter/nvim-treesitter", event = 'BufEnter', run = ":TSUpdate", config = [[require('config.treesitter')]] })
@@ -167,7 +170,6 @@ require("packer").startup({
     -- Color scheme
     use ({"dracula/vim", as = "dracula", opt=true})
 
-    use {'kyazdani42/nvim-web-devicons', event = 'VimEnter'}
 
     use {
       'nvim-lualine/lualine.nvim',
