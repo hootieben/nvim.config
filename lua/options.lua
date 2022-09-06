@@ -31,6 +31,8 @@ if vim.fn.has("termguicolors") == 1 then
   vim.o.termguicolors = true
 end
 
+vim.g.mapleader = ','
+
 --[[
 vim.o allows you to set global vim options, but not local buffer vim options.
 vim.opt has a more expansive API that can handle local and global vim options.
