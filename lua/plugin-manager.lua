@@ -38,6 +38,9 @@ return require("packer").startup({
       end
     })
 
+    -- kitty integration
+    use { 'knubie/vim-kitty-navigator' }
+
     -- make dot operator work in a sensible way
     use "tpope/vim-repeat"
 
