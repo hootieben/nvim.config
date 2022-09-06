@@ -31,11 +31,12 @@ return require("packer").startup({
     use "wbthomason/packer.nvim"
 
     -- colorschemes
-    use "EdenEast/nightfox.nvim"
-    use "fenetikm/falcon"
-    use "nikolvs/vim-sunbather"
-    use "sainnhe/gruvbox-material"
-    use "integralist/hart-foundation"
+    use ({"dracula/vim",
+      as = "dracula",
+      config = function()
+        vim.cmd 'colorscheme dracula'
+      end
+    })
 
     -- make dot operator work in a sensible way
     use "tpope/vim-repeat"
