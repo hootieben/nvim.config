@@ -46,6 +46,13 @@ return require("packer").startup({
     -- make dot operator work in a sensible way
     use "tpope/vim-repeat"
 
+    use {
+      "lukas-reineke/indent-blankline.nvim",
+      config = function()
+        require("indent_blankline").setup()
+      end
+    }
+
     -- syntax tree parsing for more intelligent syntax highlighting and code navigation
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
     use { "lewis6991/spellsitter.nvim",
