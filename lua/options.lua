@@ -53,3 +53,5 @@ vim.diagnostic.config({
     border = "rounded",
   },
 })
+
+vim.notify = require("notify")

@@ -38,6 +38,8 @@ return require("packer").startup({
       end
     })
 
+    use "rcarriga/nvim-notify"
+
     -- kitty integration
     use { 'knubie/vim-kitty-navigator' }
 
