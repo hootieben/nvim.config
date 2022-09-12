@@ -23,6 +23,20 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
+require("lspconfig").sumneko_lua.setup({
+  on_attach = function(client, bufnr)
+    require("shared").on_attach(client, bufnr)
+  end,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+        disable = { "lowercase-global" }
+      }
+    }
+  }
+})
+
 require("lspconfig").terraformls.setup({
   on_attach = function(client, bufnr)
     require("shared").on_attach(client, bufnr)
