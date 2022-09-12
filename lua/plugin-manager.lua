@@ -363,16 +363,6 @@ return require("packer").startup({
       end
     }
 
-    -- writing
-    use { "marcelofern/vale.nvim",
-      config = function()
-        require("vale").setup({
-          bin = "/usr/local/bin/vale",
-          vale_config_path = "$HOME/.vale.ini",
-        })
-      end
-    }
-
     -- swappable arguments and list elements
     use { "mizlan/iswap.nvim",
       config = function()
