@@ -107,6 +107,12 @@ return require("packer").startup({
       requires = { "kyazdani42/nvim-web-devicons" },
       config = function()
         require("nvim-tree").setup({
+          sync_root_with_cwd = true,
+          respect_buf_cwd = true,
+          update_focused_file = {
+            enable = true,
+            update_root = true
+          },
           renderer = {
             indent_markers = {
               enable = true
@@ -118,6 +124,17 @@ return require("packer").startup({
         })
       end
     }
+
+    use {
+      "ahmedkhalf/project.nvim",
+      config = function()
+        require("project_nvim").setup {
+          patterns = { "*.tfvars" }
+        }
+        require('telescope').load_extension('projects')
+      end
+    }
+
 
     -- status line
     use { "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } }
