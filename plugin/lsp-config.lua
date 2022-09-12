@@ -20,6 +20,16 @@ function OrgImports(wait_ms)
   end
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+require("lspconfig").terraformls.setup({
+  on_attach = function(client, bufnr)
+    require("shared").on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+})
+
 require("lspconfig").gopls.setup({
   on_attach = function(client, bufnr)
     require("shared").on_attach(client, bufnr)
