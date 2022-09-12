@@ -31,7 +31,7 @@ return require("packer").startup({
     use "wbthomason/packer.nvim"
 
     -- colorschemes
-    use ({"dracula/vim",
+    use({ "dracula/vim",
       as = "dracula",
       config = function()
         vim.cmd 'colorscheme dracula'
