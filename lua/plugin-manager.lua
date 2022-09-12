@@ -324,6 +324,7 @@ return require("packer").startup({
     use "weilbith/nvim-code-action-menu"
     use "simrat39/rust-tools.nvim"
     use "lvimuser/lsp-inlayhints.nvim" -- rust-tools already provides this feature, but gopls doesn't
+    use "onsails/lspkind.nvim"
 
     -- autocomplete
     use "hrsh7th/nvim-cmp"
