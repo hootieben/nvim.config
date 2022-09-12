@@ -391,6 +391,8 @@ return require("packer").startup({
         require("todo-comments").setup()
       end
     }
+
+    use { "hashivim/vim-terraform" }
   end,
   config = {
     git = {
