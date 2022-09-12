@@ -254,6 +254,13 @@ return require("packer").startup({
       end
     }
 
+    use { "folke/lua-dev.nvim",
+      config = function()
+        require("lua-dev").setup({
+        })
+      end
+    }
+
     -- lsp
     use {
       "williamboman/mason.nvim",
