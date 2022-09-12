@@ -26,7 +26,7 @@ vim.cmd([[
 ]])
 
 return require("packer").startup({
-  function()
+  function(use)
     -- plugin manager
     use "wbthomason/packer.nvim"
 
