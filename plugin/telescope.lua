@@ -23,6 +23,7 @@ ts.load_extension("fzf")
 ts.load_extension("heading")
 ts.load_extension("ui-select")
 ts.load_extension("windows")
+ts.load_extension("projects")
 
 vim.g.telescope_changed_files_base_branch = "main"
 
