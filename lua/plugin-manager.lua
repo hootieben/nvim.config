@@ -275,7 +275,6 @@ return require("packer").startup({
         "lua-language-server",
         "marksman",
         "terraform-ls",
-        "tflint",
         "typescript-language-server",
         "yaml-language-server",
         "yamllint",
