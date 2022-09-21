@@ -16,3 +16,9 @@ function _G.set_terminal_keymaps()
 end
 
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+
+--[[ nnoremap <silent> <C-H> :KittyNavigateLeft<cr>
+nnoremap <silent> <C-L> :KittyNavigateRight<cr>
+nnoremap <silent> <C-K> :KittyNavigateUp<cr>
+nnoremap <silent> <C-J> :KittyNavigateDown<cr>
+ ]]

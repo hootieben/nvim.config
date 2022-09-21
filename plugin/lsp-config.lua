@@ -42,6 +42,11 @@ require("lspconfig").terraformls.setup({
     require("shared").on_attach(client, bufnr)
   end,
   capabilities = capabilities,
+  initializationOptions = {
+    experimentalFeatures = {
+      prefillRequiredFields = true,
+    },
+  },
 })
 
 require("lspconfig").gopls.setup({
@@ -75,6 +80,7 @@ require("lspconfig").gopls.setup({
     vim.keymap.set('n', '<leader><leader>lv', "<Cmd>cex system('revive -exclude vendor/... ./...') | cwindow<CR>",
       bufopts)
   end,
+  capabilities = capabilities,
   settings = {
     gopls = {
       analyses = {

@@ -40,23 +40,22 @@ cmp.setup({
     end, { 'i', 's' }),
   }),
   sources = {
-    { name = "buffer" },
-    { name = "cmdline" },
+    -- { name = "cmdline" },
     { name = "luasnip" },
     { name = "nvim_lua" },
     { name = "nvim_lsp" },
     { name = "nvim_lsp_signature_help" },
+    { name = "buffer" },
     { name = "path" },
   },
   formatting = {
     format = lspkind.cmp_format({
       mode = "symbol_text",
       menu = ({
-        buffer = "[Buffer]",
-        cmdline = "[Cmdline]",
         nvim_lsp = "[LSP]",
         luasnip = "[LuaSnip]",
-
+        buffer = "[Buffer]",
+        -- cmdline = "[Cmdline]",
       })
     }),
   },

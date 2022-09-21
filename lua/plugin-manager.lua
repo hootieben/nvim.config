@@ -53,6 +53,9 @@ return require("packer").startup({
       end
     }
 
+    use { 'jiangmiao/auto-pairs' }
+    use { 'gpanders/editorconfig.nvim' }
+
     -- syntax tree parsing for more intelligent syntax highlighting and code navigation
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
     use { "lewis6991/spellsitter.nvim",
@@ -148,6 +151,8 @@ return require("packer").startup({
     -- git history
     use { "sindrets/diffview.nvim", requires = { "nvim-lua/plenary.nvim" } }
 
+    use { "kdheepak/lazygit.nvim" }
+
     -- highlighters and indicators
     use { "RRethy/vim-illuminate", -- word usage highlighter
       config = function()
@@ -187,7 +192,7 @@ return require("packer").startup({
     use "machakann/vim-highlightedyank"
 
     -- move lines around
-    use "matze/vim-move"
+    -- use "matze/vim-move"
 
     -- open lines in github
     use { "ruanyl/vim-gh-line",
@@ -329,7 +334,16 @@ return require("packer").startup({
     -- autocomplete
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-buffer"
-    use "hrsh7th/cmp-cmdline"
+    --[[ use { "hrsh7th/cmp-cmdline",
+      config = function()
+        require("cmp").setup.cmdline(':', {
+          sources = {
+            { name = 'cmdline' }
+          }
+        })
+      end
+    } ]]
+
     use "hrsh7th/cmp-nvim-lua"
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/cmp-nvim-lsp-signature-help"
