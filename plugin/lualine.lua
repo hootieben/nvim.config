@@ -1,5 +1,13 @@
 require("lualine").setup({
-  --[[ options = {
-    theme = "gruvbox"
-  } ]]
+  options = {
+    theme = "dracula"
+  },
+  sections = {
+    lualine_c = {
+      {
+        'filename',
+        path = 3
+      }
+    }
+  }
 })
