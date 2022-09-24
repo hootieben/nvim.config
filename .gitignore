@@ -3,3 +3,4 @@
 backups/
 spell/
 pack/
+.luarc.json
