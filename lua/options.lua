@@ -2,6 +2,7 @@
 To see what an option is set to execute :lua = vim.o.<name>
 --]]
 
+vim.g.python3_host_prog = "/home/hootieben/.config/nvim/.direnv/python-3.8.10/bin/python3"
 vim.o.backup = false
 vim.o.clipboard = "unnamedplus"
 vim.o.completeopt = "menuone,noinsert,noselect"
