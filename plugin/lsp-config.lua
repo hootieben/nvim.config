@@ -20,8 +20,11 @@ function OrgImports(wait_ms)
   end
 end
 
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+-- capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+-- capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 require("lspconfig").sumneko_lua.setup({
   on_attach = function(client, bufnr)
@@ -35,6 +38,12 @@ require("lspconfig").sumneko_lua.setup({
       }
     }
   }
+})
+
+require("lspconfig").yamlls.setup({
+  on_attach = function(client, bufnr)
+    require("shared").on_attach(client, bufnr)
+  end
 })
 
 require("lspconfig").terraformls.setup({
@@ -70,7 +79,8 @@ require("lspconfig").gopls.setup({
       group = id,
       pattern = "*.go",
       callback = function()
-        vim.lsp.buf.formatting_sync()
+        -- vim.lsp.buf.formatting_sync()
+        vim.lsp.buf.format()
         OrgImports(1000)
         require("lint").try_lint() -- golangci-lint configuration via ./lint.lua
       end,
@@ -146,7 +156,7 @@ require("rust-tools").setup({
         group = id,
         pattern = "*.rs",
         callback = function()
-          vim.lsp.buf.formatting_sync()
+          vim.lsp.buf.format()
           require("lint").try_lint()
         end,
       })

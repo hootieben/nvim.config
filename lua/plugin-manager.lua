@@ -39,6 +39,20 @@ return require("packer").startup({
     })
 
     use "rcarriga/nvim-notify"
+    --[[ use { "rcarriga/nvim-notify",
+      config = function()
+        require("notify").setup({
+          background_colour = "#000000",
+        })
+      end
+    } ]]
+
+    --[[ use {
+      "rcarriga/nvim-notify",
+      config = function()
+        require("notify").setup()
+      end
+    } ]]
 
     -- kitty integration
     use { 'knubie/vim-kitty-navigator' }
@@ -87,7 +101,12 @@ return require("packer").startup({
     use "mileszs/ack.vim"
 
     -- search indexer
-    use "kevinhwang91/nvim-hlslens"
+    -- use "kevinhwang91/nvim-hlslens"
+    use { "kevinhwang91/nvim-hlslens",
+      config = function()
+        require("hlslens").setup()
+      end
+    }
     use { "haya14busa/vim-asterisk",
       config = function()
         vim.api.nvim_set_keymap('n', '*', [[<Plug>(asterisk-z*)<Cmd>lua require('hlslens').start()<CR>]], {})
@@ -115,6 +134,18 @@ return require("packer").startup({
           update_focused_file = {
             enable = true,
             update_root = true
+          },
+          view = {
+            adaptive_size = true,
+            signcolumn = "no",
+            mappings = {
+              list = {
+                { key = "u", action = "dir_up" },
+              },
+            },
+            float = {
+              enable = false
+            }
           },
           renderer = {
             indent_markers = {
@@ -259,20 +290,49 @@ return require("packer").startup({
       end
     }
 
-    use { "folke/lua-dev.nvim",
+    use { "folke/neodev.nvim",
       config = function()
-        require("lua-dev").setup({
+        require("neodev").setup({
         })
       end
     }
 
     -- lsp
+
+    use({
+      "jose-elias-alvarez/null-ls.nvim",
+      config = function()
+        require("null-ls").setup({
+          source = {
+            require("null-ls").builtins.code_actions.gitsigns,
+            require("null-ls").builtins.code_actions.shellcheck,
+            require("null-ls").builtins.completion.luasnip,
+            require("null-ls").builtins.diagnostics.cfn_lint,
+            require("null-ls").builtins.diagnostics.commitlint,
+            require("null-ls").builtins.diagnostics.editorconfig_checker,
+            require("null-ls").builtins.diagnostics.golangci_lint,
+            require("null-ls").builtins.diagnostics.shellcheck,
+            require("null-ls").builtins.diagnostics.yamllint,
+            require("null-ls").builtins.diagnostics.zsh,
+            require("null-ls").builtins.formatting.jq,
+            require("null-ls").builtins.formatting.packer,
+            require("null-ls").builtins.formatting.rego,
+
+          }
+        })
+      end,
+      requires = { "nvim-lua/plenary.nvim" },
+    })
+
     use {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
     }
     require("mason").setup()
+    require("mason-lspconfig").setup()
+
+    --[[ require("mason").setup()
     local mason_lspconfig = require("mason-lspconfig")
     mason_lspconfig.setup({
       ensure_installed = {
@@ -294,7 +354,7 @@ return require("packer").startup({
           end
         })
       end
-    })
+    }) ]]
     use { "j-hui/fidget.nvim",
       config = function()
         require("fidget").setup()

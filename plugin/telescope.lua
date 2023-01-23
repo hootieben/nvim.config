@@ -10,6 +10,11 @@ ts.setup({
       },
     },
   },
+  pickers = {
+    find_files = {
+      find_command = { "rg", "--files", "--hidden", "--glob", "!.git/*" },
+    },
+  },
   extensions = {
     heading = {
       treesitter = true,
@@ -24,6 +29,7 @@ ts.load_extension("heading")
 ts.load_extension("ui-select")
 ts.load_extension("windows")
 ts.load_extension("projects")
+ts.load_extension("notify")
 
 vim.g.telescope_changed_files_base_branch = "main"
 

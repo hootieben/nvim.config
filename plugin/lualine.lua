@@ -1,6 +1,9 @@
 require("lualine").setup({
   options = {
-    theme = "dracula"
+    theme = "dracula",
+    disabled_filetypes = {
+      statusline = { "NvimTree" }
+    }
   },
   sections = {
     lualine_c = {

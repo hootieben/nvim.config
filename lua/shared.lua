@@ -23,7 +23,7 @@ function export.on_attach(_, bufnr)
     pattern = {
       "*"
     },
-    command = [[lua vim.lsp.buf.formatting_sync()]]
+    command = [[lua vim.lsp.buf.format()]]
   })
 end
 
